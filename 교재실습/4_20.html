@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // // for in 문
+        // var person = {fname:"John", lname:"Doe", age:25};
+        // var text = "";
+        // for(var x in person){
+        //     text += person[x];
+        // }
+        // alert(text);
+        // text = "";
+        // var arr = ["A","n","Hui","Geon","1801160","WDJ"];
+        // for(var x in arr){
+        //     text += arr[x];
+        // }
+        // alert(text);
+        
+        // // for of 문
+        // let person = {fname:"John", lname:"Doe", age:25};
+        // var person = [10, 20, 30];
+        // let text = "";
+        // for(let x of person){
+        //     console.log("x: " + x);
+        //     console.log("person: " + person);
+        // }
+        // text = "";
+        // let arr = ["A","n","Hui","Geon","1801160","WDJ"];
+        // for(let x of arr){
+        //     console.log("x: " + x);
+        //     console.log("arr: " + arr);
+        // }
+        
+        // // forEach 문
+        // var fruits = ["Apple", "Banana", "Orange", "Strawberry"];
+        // fruits.forEach((item, index, array) => {
+        //     console.log(item, index);
+        //     console.log(array);
+        // });
+        // var arr = ["A","n","Hui","Geon","1801160","WDJ"];
+        // arr.forEach(function(value, index){
+        //     console.log(value, index);
+        // });
+
+        // var userData = new Array();
+        // function addUser(){
+        //     var name = window.prompt('이름을 입력');
+        //     userData.push(name);
+        // }
+        // function printAll(){
+        //     var datas = userData.length;
+        //     if(datas == 0){
+        //         window.alert('등록된 데이터가 없습니다.');
+        //     }
+        //     else{
+        //         window.alert('총 데이터 수는: ' + datas);
+        //         for(var i = 0; i < datas; i++)
+        //             window.alert('데이터' + (i + 1) + ' : ' + userData[i]);
+        //     }
+        // }
+
+        // function count() {
+        // var i;
+        // for (i = 1; i < 10; i += 1) {
+        //     (function (j){
+        //         setTimeout(function timer() {
+        //             console.log(j);
+        //             }, j*100);
+        //     })(i);
+        //     }
+        // }
+        // count();
+        function count() {
+            for (let i = 1; i < 10; i += 1) {
+                setTimeout(function timer() {
+                    console.log(i);
+                }, i*100);
+            }
+        }
+        count();
+    </script>
+</head>
+<body>
+    <!-- <input type="button" onclick="addUser()" value="추가" />
+    <input type="button" onclick="printAll()" value="출력" /> -->
+</body>
+</html>
