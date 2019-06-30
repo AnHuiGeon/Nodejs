@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h3 Q&A Page
+  form#question-form(action='/question' method='post')
+      .input-group
+        input.ask-input(type='text' name='question' placeholder='질문을 입력해주세요' required)
+        button#ask-btn.btn(type='submit') 질문하기
+      if joinError
+        .error-message= joinError
+  if(questions)
+    br
+    h4 질문 목록
+    body#quetions
+      for question in questions
+        form.question(action="/comment/"+question.id, method="get")
+          span 질문:
+          input(type="hidden", name="question" value=question.question required)
+          input.q_id(type="hidden", name="id" value=question.id)
+          button.q_btn(type='submit') #{question.question}
+          button.delete_btn.btn 삭제
+          button.patch_btn.btn 수정
+  script(src="/question.js")

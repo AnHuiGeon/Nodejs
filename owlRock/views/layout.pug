@@ -1,7 +1,40 @@
-doctype html
+doctype
 html
   head
+    meta(charset='UTF-8')
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='shortcut icon' href='/favicon.ico')
+    link(rel='stylesheet' href='/main.css')
   body
-    block content
+    h1
+      a(href="/") 10조 기말과제
+    .container
+      if user && user.id
+        input#my-id(type='hidden' value=user.id)
+        div
+          ul#menu
+            a.list(href='/semesterInfo') 현지학기제
+            a.list(href='/groupInfo') 조원소개
+            a.list(href='/question') 질의응답
+          div#hello
+            .user-name= '안녕하세요! ' + user.nick + '님'
+            a#logout.btn(href='/auth/logout') 로그아웃
+      else
+        .profile-wrap
+          .profile
+            h3 LOGIN
+            form#login-form(action='/auth/login' method='post')
+              .input-group
+                input#email(type='email' name='email' placeholder='이메일' required autofocus)
+              .input-group
+                input#password(type='password' name='password' placeholder='비밀번호' required)
+              if loginError
+                .error-message= loginError
+              button#login.btn(type='submit') 로그인
+              a#join.btn(href='/join') 회원가입
+      br
+      block content
+      block message
+        footer MADE BY GROUP.10

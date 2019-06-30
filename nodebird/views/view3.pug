@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  form#join-form(action='/view3' method='post')
+      .input-group
+        label(for='join-email') 질문
+        input#join-email(type='text' name='question')
+      if joinError
+        .error-message= joinError
+      button#join-btn.btn(type='submit') 추가
+  if(questions)
+    for question in questions
+      form(action="/comment", method="post")
+        input(type="hidden", name="id" value=question.id)
+        input(type="hidden", name="question" value=question.question)
+        label(for="question-question") 질문 
+        button(type='submit') #{question.question}
+        
+  
+  

@@ -1,7 +1,9 @@
 //서버가 보내준 클라이언트에서 동작한다.
 document.querySelectorAll('#user-list tr').forEach(function (el){   //각각 하나씩 다 찾아서 eventlistener를 붙여준다.
+    console.log('el: ' + el);
     el.addEventListener('click', function() {
         var id = el.querySelector('td').textContent;    //다 출력을 해준다.
+        console.log('id: ' + id);
         getComment(id);
     });
 });

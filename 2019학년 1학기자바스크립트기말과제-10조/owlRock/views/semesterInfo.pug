@@ -1,0 +1,86 @@
+extends layout
+block content
+  if (user)
+    h3 일본 현지학기제 소개
+    div#edit
+      button#post_btn.btn 추가
+      button#patch_btn.btn 수정
+      button#delete_btn.btn 삭제
+      a(href="/semesterInfo").btn 완료
+    div
+      if(summarys)
+        ul.outer.semester_infos 개요
+          span(hidden="true")
+            button.btn 수정
+          div(hidden="true")
+            form
+              input.ask-input(type="text", name="summary" required)
+              button.btn(type="submit") 추가        
+          div.semester_info      
+            span(hidden="true")
+              button.btn 삭제
+            input.ask-input(type="hidden", name="summary")
+            input.id(type="hidden", name="id")
+            li.inner
+          for summary in summarys
+            div.semester_info
+              span(hidden="true")
+                button.btn 삭제
+              input.ask-input(type="hidden", name="summary" value=summary.summary)
+              input.id(type="hidden", name="id" value=summary.id)
+              li.inner #{summary.summary}
+      if(purposes)
+        ul.outer.semester_infos 실시 목적
+          span(hidden="true")
+            button.btn 수정
+          div(hidden="true")
+            form
+              input.ask-input(type="text", name="purpose" required)
+              button.btn(type="submit") 추가
+          div.semester_info
+            span(hidden="true")
+              button.btn 삭제
+            input.ask-input(type="hidden", name="purpose")
+            input.id(type="hidden", name="id")
+            li.inner
+          -var j = 0;
+          for purpose in purposes
+            -j++;
+            div.semester_info
+              span(hidden="true")
+                button.btn 삭제
+              input.ask-input(type="hidden", name="purpose" value=purpose.purpose)
+              input.id(type="hidden", name="id" value=purpose.id)
+              li.inner #{purpose.purpose}
+            if(j == 4)
+              img.image.inner(src='caption.jpg')
+      if(contents)
+        ul.outer.semester_infos 연수 내용
+          span(hidden="true")
+            button.btn 수정
+          div(hidden="true")      
+            form
+              input.ask-input(type="text", name="content" required)
+              button.btn(type="submit") 추가
+          div.semester_info     
+            span(hidden="true")
+              button.btn 삭제 
+            input.ask-input(type="hidden", name="content" )
+            input.id(type="hidden", name="id")
+            li.inner 
+          -var i = 0;
+          for content in contents
+            div.semester_info
+              span(hidden="true")
+                button.btn 삭제
+              input.ask-input(type="hidden", name="content" value=content.content )
+              input.id(type="hidden", name="id" value=content.id)
+              li.inner #{content.content}
+            -i++;
+            if(i == 5)
+              img.cp.inner(src='mf.png')
+              img.cp.inner(src='GMO.jpg')
+              img.image.inner(src='startia.jpg')
+          img.image.inner(src='대학.jpg') 
+  script(src="/semesterInfo.js")
+

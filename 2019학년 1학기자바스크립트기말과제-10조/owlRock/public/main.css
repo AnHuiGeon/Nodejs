@@ -1,0 +1,341 @@
+* { 
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+html, body { 
+  margin: 0; padding: 0; height: 100%; 
+  background-color: azure;
+}
+h1 {
+  text-align: center;
+  color: dodgerblue;
+}
+h3 {
+  text-align: center;
+  color: darkblue;
+}
+h4{
+  font-weight: normal;
+}
+#name{
+  margin-top: 0;
+}
+.semester_infos > span > button {
+  height: 23px;
+  text-align: left;
+  line-height: 0%;
+}
+.btn {
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+  background: white;
+  border: 1px solid darkturquoise;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: dodgerblue;
+  font-weight: bold;
+  height: 37px;
+  line-height: 37px;
+  vertical-align: top;
+  font-size: 12px;
+  margin-right: 8px;
+}
+input[type='text'], input[type='email'], input[type='password'], textarea {
+  height: 37px;
+  padding: 10px;
+  border: 1px solid silver;
+}
+.container { 
+  width: 100%;
+  padding: 20px;
+}
+.input-group { margin-bottom: 15px; }
+#login { 
+  width: 100%;
+  margin-bottom: 10px;
+}
+p{
+  display: inline;
+}
+#join{
+  display: inline;
+  border: none;
+  background-color: lightcyan;
+  vertical-align: baseline;
+  font-size: 15px;
+  font-weight: normal;
+}
+#join-btn{
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+h3 {
+  text-align: center;
+  color: darkblue;
+}
+.profile-wrap {
+  width: 60%;
+  position: relative;
+  padding: 10px;
+  vertical-align: top;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+.profile {
+  text-align: left;
+  padding: 0 10px 10px; 
+  margin: 0 auto 10px;
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+}
+.user-name { 
+  display: inline;
+  font-weight: bold; 
+  font-size: 20px;
+}
+#menu{
+  display: inline;
+  margin: 0 auto;
+  border: 1px dashed darkturquoise;
+  text-align: center;
+  background-color: azure;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.list{
+  margin: 0 30px 0 30px;
+}
+.list:hover{
+  color: rgb(31, 79, 212);
+}
+a{
+  text-decoration: none;
+  color: dodgerblue;
+}
+#hello{
+  float: right;
+}
+#logout{
+  display: inline;
+  margin-left: 10px;
+  font-size: 18px;
+  vertical-align: baseline;
+  background-color: azure;
+  border: none;
+}
+#join:hover, #logout:hover {
+  color: firebrick;
+}
+#edit{
+  display: block;
+  text-align: right;
+  /* border: 1px solid darkturquoise; */
+}
+#edit > .btn{
+  border: none;
+  background-color: azure;
+  font-size: 15px;
+  font-weight: 600;
+}
+#edit > .btn:hover{
+  color: rgb(31, 79, 212);
+}
+
+.q_btn{
+  width: 80%;
+  cursor: pointer;
+  background: lightcyan;
+  border: none;
+  height: 57px;
+  font-size: 20px;
+  text-align: left;
+}
+
+#user{
+  margin: 24px 0 auto 10px;
+  cursor: pointer;
+  background: azure;
+  width: 100px;
+  font-size: 1.1em;
+  border: none;
+  color: dodgerblue;
+  height: 50px;
+}
+#user:hover{
+  color: rgb(31, 79, 212);
+}
+#g_profile{
+  border: 3px dotted darkturquoise;
+  padding: 15px;
+  text-align: left;
+}
+
+.g-info{
+  display: inline;
+}
+
+.ask-input{
+  width: 85%;
+}
+
+#p{
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+  margin-right: 20px;
+}
+#pfimg {
+  width: 200px;
+  border: 3px solid silver;
+  margin-right: 20px;
+}
+.error-message { 
+  color: red; 
+  margin-bottom: 8px;
+}
+#join-form {
+  position: relative;
+  margin: 0 auto 100px;
+  padding: 0 10px 10px; 
+  width: 60%;
+  text-align: left; 
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+}
+#join-form > * > input {
+  width: 100%;
+}
+#login-form > * input {
+  width: 100%;
+}
+
+.question{
+  height: 60px;
+  background: lightcyan;
+  border: 1px solid rgb(86, 180, 180);
+  margin-bottom: 8px;
+  padding-left: 15px;
+}
+#question-form {
+  padding-top: 14px; 
+  padding-left: 10px;
+  text-align: left; 
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.comment-form{
+  margin-bottom: 4px;
+  padding-left: 15px;
+  background: lightcyan;
+  border: 1px solid rgb(86, 180, 180);
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  text-align: left;
+  line-height: 60px;
+}
+#answer{
+  display: inline;
+  font-weight: normal;
+}
+.patch_btn, .delete_btn{
+  float: right;
+  border: none;
+  background: rgba(224, 255, 255, 0.3);
+  position: static;
+  height: 57px;
+  font-size: 15px;
+}
+.patch_btn:hover, .delete_btn:hover{
+  color: rgb(31, 79, 212);
+}
+.ask-btn{
+  margin: 0 15px auto;
+}
+
+ul{
+  display: block;
+  margin: 5px;
+  color: darkblue;
+  font-weight: 600;
+  border: 2px solid darkturquoise;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin-bottom: 8px;
+}
+li{
+  margin: 5px;
+  list-style: decimal;
+}
+.inner{
+  display: inline-block;
+  color: black;
+  font-weight: 100;
+  list-style-position: inside;
+  margin-top: 8px;
+}
+img{
+  border: 2px dashed darkturquoise;
+  margin-right: 8px;
+}
+.image{
+  display: inline;
+  width: 40%;
+}
+.cp{
+  display: inline;
+  vertical-align: top;
+  width: 20%;
+}
+footer { 
+  position: static;
+  text-align: center;
+  color: dodgerblue;
+  font-weight: bold; 
+  margin-top: 18px;
+  bottom: 20px;
+}
+
+/* 모바일 사이즈 */
+@media screen and (max-width: 720px){
+  .container{
+    width: 720px;
+  }
+  .profile-wrap{
+    width: 100%;
+  }
+  #join-form{
+    width: 100%;
+  }
+  h1{
+    width: 720px;
+  }
+  #menu{
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .list{
+    margin: 0 10px 0 10px;
+  }
+  .q_btn{
+    width: 80%;
+  }
+  footer{
+    width: 720px;
+  }
+}
+
+/* 이미지 최대 사이즈 지정 */
+@media screen and (min-width: 1200px){
+  .image{
+    width: 500px;
+  }
+  .cp{
+    width: 250px;
+  }
+}

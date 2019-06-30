@@ -1,0 +1,27 @@
+extends layout
+
+block content
+   h3 조원 소개
+    div
+      for group in groups
+        form.g-info
+          input(type="hidden", name="id" value=group.id)
+          button#user(type='submit' name="name") #{group.name}
+    div#g_profile
+      img#pfimg(src="/iconTest.png")
+      div#p
+        input#group-id(type="hidden", name="id")
+        h4#name 이름: 
+          span#group-name
+        h4 나이: 
+          input#input-age(type="hidden")
+          span#group-age
+        h4 자격증: 
+          input#input-license(type="hidden")
+          span#group-license
+        h4 자기소개: 
+          input#input-intro.ask-input(type="hidden")
+          span#group-intro
+      button#patch_group.btn 수정
+    script(src="/groupInfo.js")
+

@@ -3,11 +3,9 @@
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title 시퀄라이즈 서버테스트
+        title 몽구스 서버테스트
         style.
-            table{
+            table {
                 border: 1px solid black;
                 border-collapse: collapse;
             }
@@ -36,9 +34,9 @@ html(lang="en")
                     th 나이
                     th 결혼여부
             tbody
-                for user in users   //routers/index.js 에서 render로 정보가 오게 된다.
+                for user in users   
                     tr
-                        td= user.id
+                        td= user._id     
                         td= user.name
                         td= user.age
                         td= user.married?'기혼':'미혼'

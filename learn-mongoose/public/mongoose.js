@@ -21,10 +21,10 @@ function getUser() {
         users.map((user) => {
             var row = document.createElement('tr');
             row.addEventListener('click', () => {
-                getComment(user._id);
+                getComment(user._id);       // sequelize.js와 다른 부분
             });
             var td = document.createElement('td');
-            td.textContent = user._id;
+            td.textContent = user._id;      // sequelize.js와 다른 부분
             row.appendChild(td);
             td = document.createElement('td');
             td.textContent = user.name;
@@ -57,10 +57,10 @@ function getComment(id) {
         comments.map( (comment) => {
             var row = document.createElement('tr');
             var td = document.createElement('td');
-            td.textContent = comment._id;
+            td.textContent = comment._id;       // sequelize.js와 다른 부분
             row.appendChild(td);
             td = document.createElement('td');
-            td.textContent = comment.commenter.name;
+            td.textContent = comment.commenter.name;        // sequelize.js와 다른 부분
             row.appendChild(td);
             td = document.createElement('td');
             td.textContent = comment.comment;
@@ -72,16 +72,14 @@ function getComment(id) {
                 if(!newComment){
                     return alert('내용을 반드시 입력하셔야 합니다.');
                 }
-                fetch('/comments/' + comment._id,
-                {
+                fetch('/comments/' + comment._id, {
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    method: "PATCH",
-                    body: JSON.stringify({ comment: newComment })
-                }
-                ).then((response) => {
+                    method: 'PATCH',
+                    body: JSON.stringify({ comment: newComment }),
+                }).then((response) => {
                     if(response.status == '200'){
                         return response.json();
                     }
@@ -95,7 +93,7 @@ function getComment(id) {
             var remove = document.createElement('button');
             remove.textContent = '삭제';
             remove.addEventListener('click', () => {    //삭제 클릭 시
-                fetch('/comments/' + comment._id, {method: "DELETE"}
+                fetch('/comments/' + comment._id, {method: "DELETE"}        // sequelize.js와 다른 부분
                 ).then((response) => {
                     if(response.status == '200'){
                         return response.json();

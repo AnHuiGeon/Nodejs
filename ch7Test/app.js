@@ -15,6 +15,7 @@ sequelize.sync(); //이걸로 DB서버와 연결되어 연동 가능.
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.locals.pretty=true;
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));  //미들웨어, 정적파일, 가능한 속도를 빠르게 하기 위해 순서를 바꿈(기존은 23번 단락에 있었다.)

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h3 질문 : #{question}
+    form#question-form(action='/comment/'+id method='post')
+        input(type="hidden", name="question" value=question required)
+        input(type="hidden", name="id" value=id)
+        .input-group
+            input.ask-input(type='text' name='comment' placeholder='답변')
+            button.ask-btn.btn(type='submit') 추가
+        if joinError
+            .error-message= joinError
+    br
+    h4 답변 목록
+    if(comments)
+        for comment in comments
+            form.comments
+                input.comment_id(type="hidden", value=comment.id)
+                input.id(type="hidden", value=id)
+                div.comment-form
+                    h4#answer 답변 : 
+                        input.comment(type="hidden" value=comment.comment required)
+                        span #{comment.comment}
+                    button.btn.delete_btn(type='submit') 삭제
+                    button.btn.patch_btn(type='submit') 수정
+    script(src="/comment.js")

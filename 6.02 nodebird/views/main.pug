@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  if user
+    div
+      h3 일본 생활 적응력 향상 및 취업률 제고를 위한 일본 현지학기제 운영
+      form#join-form(action='/auth/group' method='post')
+        label(for='group-name') 이름
+        input#join-password(type='text' name='name')
+      if joinError
+        .error-message= joinError
+        button#join-btn(type='submit') 추가
+    ul 메인
+      li 연수대상: 컴퓨터정보계열 2학년 WD-J
+      li 연수장소: 일본 후쿠오카 연수기관
+      li 연수기간: 8월 3일 ~ 9월 11일
+    ul#perpose 실시 목적
+      li 국가와 기업에서 요구하는 인재 양성
+      li 취업 등 대외 경쟁 우위 선점
+      li 해외 현지 생활체험을 통하여 외국어 활용 능력 향상
+    ul#content 연수 내용
+      li 수준별 일본 비즈니스 현장 회화 실습
+      li 일본 비즈니스 매너, 일본 문화체험
+      li 일어 청해/말하기/작문
+      li 실무 일본어 회화, 현장 실습, 창의공학실무 등
+      li 일본 IT 기업 견학
+      li 한일 교류회 개최
+      li 문화 탐방
+      li 후쿠오카 대학 오픈캠퍼스 참석
+    div#image
+      img(src="/hibana.jpg" alt='대충 일본 사진')
+  script.

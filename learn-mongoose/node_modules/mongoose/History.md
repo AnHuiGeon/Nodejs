@@ -1,3 +1,24 @@
+5.5.11 / 2019-05-23
+===================
+ * fix(discriminator): allow numeric discriminator keys for embedded discriminators #7808
+ * chore: add Node.js 12 to travis build matrix #7784
+
+5.5.10 / 2019-05-20
+===================
+ * fix(discriminator): allow user-defined discriminator path in schema #7807
+ * fix(query): ensure `findOneAndReplace()` sends `replacement` to server #7654
+ * fix(cast): allow `[]` as a value when casting `$nin` #7806
+ * docs(model): clarify that setters do run on `update()` by default #7801
+ * docs: fix typo in FAQ #7821 [jaona](https://github.com/jaona)
+
+5.5.9 / 2019-05-16
+==================
+ * fix(query): skip schema setters when casting $regexp $options #7802 [Fonger](https://github.com/Fonger)
+ * fix(populate): don't skip populating doc array properties whose name conflicts with an array method #7782
+ * fix(populate): make populated virtual return undefined if not populated #7795
+ * fix(schema): handle custom setters in arrays of document arrays #7804 [Fonger](https://github.com/Fonger)
+ * docs(tutorials): add query casting tutorial #7789
+
 5.5.8 / 2019-05-13
 ==================
  * fix(document): run pre save hooks on nested child schemas #7792

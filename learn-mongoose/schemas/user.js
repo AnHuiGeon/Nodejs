@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 const userSchema = new Schema({
     name: {
-        thpe: Stringre,
+        type: String,
         required: true, // 필수, 반드시 요구됨
-        unique: true    // 유일한 값
+        unique: true,    // 유일한 값
     },
     age: {
         type: Number,
-        required: true
+        required: true,
     },
     married: {
         type: Boolean,
-        required: true
+        required: true,
     },
     comment: String,
     createdAt: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h3 Q&A Page
+  form#question-form(action='/view3' method='post')
+    .input-group
+      //- label#Q(for='join-email') 질문
+      input#ask-input(type='text' name='question' placeholder='Ask Question')
+    if joinError
+      .error-message= joinError
+    button#ask-btn.btn(type='submit') 추가
+  if(questions)
+    br
+    h4 Question List
+    for question in questions
+      form#comment(action="/comment", method="post")
+        input(type="hidden", name="id" value=question.id)
+        input(type="hidden", name="question" value=question.question)
+        //- label(for="question-question") ?
+        button#q_btn(type='submit') Q: #{question.question}

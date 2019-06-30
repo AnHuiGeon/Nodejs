@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  hr
+  h1= title
+  hr
+  div#group-great-wrap
+    div#group-wrap
+      for group in groups
+        div#group-img-outer
+          div.group-id #{group.id}
+          img(src=group.img, alt=group.id)#group-img-inner
+    if(groups)
+      div#group-contents
+  script(src='/groupAjax.js')

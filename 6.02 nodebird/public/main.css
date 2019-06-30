@@ -1,0 +1,243 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background-color: azure; }
+h1 {
+  text-align: center;
+  color: dodgerblue;
+}
+.btn {
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid darkturquoise;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: dodgerblue;
+  font-weight: bold;
+  height: 37px;
+  line-height: 37px;
+  vertical-align: top;
+  font-size: 12px;
+  margin-right: 8px;
+}
+#logout {
+  float: right;
+}
+input[type='text'], input[type='email'], input[type='password'], textarea {
+  border-radius: 4px;
+  height: 37px;
+  padding: 10px;
+  border: 1px solid silver;
+  margin-left: 8px;
+}
+.container { width: 100%; height: 100%; }
+@media screen and (min-width: 1600px) {
+  .container { 
+    width: 1600px; 
+    margin: 0 auto;
+  }
+}
+.input-group { margin-bottom: 15px; }
+.input-group label { width: 25%; display: inline-block; text-align: left; }
+.input-group input { width: 70%; }
+.half { float: left; width: 50%; margin: 10px 0; }
+#login { float: right; }
+h3 {
+  text-align: center;
+  color: darkblue;
+}
+.profile-wrap {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 800px) {
+  .profile-wrap { width: 400px; margin: 0 auto; }
+}
+.profile {
+  text-align: left;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+}
+.user-name { 
+  font-weight: bold; 
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 20px; 
+}
+#Q{
+  padding-left: 10px;
+  text-align: center;
+}
+#q_btn{
+  padding-left: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  background: rgba(224, 255, 255, 0.3);
+  border: 1px solid darkturquoise;
+  color: dodgerblue;
+  width: 100%;
+  height: 80px;
+  font-size: 24px;
+  text-align: left;
+}
+#user{
+  margin-top: 24px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  background: rgba(224, 255, 255, 0.7);
+  width: 150px;
+  font-size: 1.1em;
+  border: 1px solid darkturquoise;
+  color: dodgerblue;
+  height: 50px;
+}
+
+.count { font-weight: bold; color: crimson; font-size: 18px; }
+.timeline {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  border-radius: 4px;
+  vertical-align: top;
+}
+#g-info{
+  display: inline;
+}
+@media screen and (min-width: 800px) { .timeline { width: 500px; } }
+#twit-form {
+  border-bottom: 1px solid silver;
+  padding: 10px;
+  background: lightcyan;
+  overflow: hidden;
+}
+#ask-input{
+  width: 90%;
+}
+/*#img-preview { max-width: 100%; }
+#img-label {
+  float: left;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid crimson;
+  padding: 0 10px;
+  color: white;
+  font-size: 12px;
+  height: 37px;
+  line-height: 37px;
+}*/
+#img { 
+  display: inline;
+  align-items: center; 
+  align-content: center;
+} 
+#twit { width: 100%; min-height: 72px; }
+#twit-btn {
+  float: right;
+  color: white;
+  background: crimson;
+  border: none;
+}
+.twit {
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.twit-author { display: inline-block; font-weight: bold; margin-right: 10px; }
+.twit-follow {
+  padding: 1px 5px;
+  background: #fff;
+  border: 1px solid silver;
+  border-radius: 5px;
+  color: crimson;
+  font-size: 12px;
+  cursor: pointer;
+}
+.twit-img { text-align: center; }
+.twit-img img { max-width: 75%; }
+.error-message { color: red; font-weight: bold; }
+#search-form { text-align: right; }
+#join-form {
+  padding: 10px; 
+  text-align: left; 
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+#question-form {
+  height: 12%;
+  padding: 10px; 
+  text-align: left; 
+  border: 1px solid rgb(86, 180, 180);
+  background: lightcyan;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#ask-btn{
+  float: right;
+}
+#hashtag-form { text-align: right; }
+/* #comment{
+  width: 100%;
+  height: 80px;
+  background: lightcyan;
+  border: 1px solid silver;
+} */
+ul{
+    color: darkblue;
+    font-weight: 600;
+    border: 1px solid darkturquoise;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    padding: 10px;
+}
+ul li{
+  color: black;
+  font-weight: 100;
+  list-style: decimal;
+  list-style-position: inside;
+  margin-top: 8px;
+}
+footer { 
+  text-align: center;
+  color: dodgerblue;
+  font-weight: bold; 
+  margin-bottom: 18px;
+}
+/* 제일 큰 div */
+#group-great-wrap {
+  border: 1px black solid;
+  display: flex;
+}
+/* 큰 div */
+#group-wrap {
+  border: 1px red solid;
+  width: 33%;
+}
+/* img태그 */
+#group-img-inner {
+  width: 100%;
+}
+/* 소개란 div */
+#group-contents {
+  border: 1px green solid;
+  width: 67%;
+}
+/* 사진 누를 때 id 감춰둔거 숨었지롱~ 못찾는다 꾀꼬리~ */
+.group-id {
+  display: none;
+}

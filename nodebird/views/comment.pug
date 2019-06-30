@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h3 질문 : #{question}
+    form#join-form(action='/comment' method='post')
+        input(type="hidden", name="question" value=question)
+        input(type="hidden", name="id" value=id)
+        .input-group
+            label(for='join-email') 답
+            input#join-email(type='text' name='comment')
+        if joinError
+            .error-message= joinError
+        button#join-btn.btn(type='submit') 추가
+    if(comments)
+        for comment in comments
+            h4 답 : #{comment.comment}
+    

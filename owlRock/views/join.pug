@@ -1,0 +1,20 @@
+doctype
+html
+  head
+    link(rel='stylesheet' href='/main.css')
+  body
+    h1 10조 기말과제
+    .timeline
+      form#join-form(action='/auth/join' method='post')
+        h3 회원가입
+        .input-group
+          input#join-email(type='email' name='email' placeholder='이메일' required)
+        .input-group
+          input#join-nick(type='text' name='nick' placeholder='닉네임' required)
+        .input-group
+          input#join-password(type='password' name='password' placeholder='비밀번호' required)
+        if joinError
+          .error-message= joinError
+        button#join-btn.btn(type='submit') 회원가입
+        a#join(href="/").btn 취소
+    footer MADE BY GROUP.10

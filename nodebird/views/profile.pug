@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 화면2
+    if(group)
+      h4 #{group.name}
+      h4 #{group.id}
+    div
+      form(action="/profile", method="post")
+        input(type='hidden' name='users' value='user1')
+        button(type='submit') user1
+      form(action="/profile", method="post")
+        input(type='hidden' name='users' value='user2')
+        button(type='submit') user2
+    h3#users

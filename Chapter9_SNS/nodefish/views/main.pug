@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    .timeline
+        if user
+            div
+                form#twit-form(action='/post' method='post' enctype='multipart/form-data')
+                    .input-group
+                        textarea#twit(name='content' maxlength=140)
+                    .img-preview
+                        img#img-preview(src='' style='display: none;' width='250' alt='미리보기')
+                        input#img-url(type='hidden' name='url')
+                    div
+                        label#img-label(for='img') 사진 업로드
+                        input#img(type='file' accept='image/*')
+                        button#twit-btn.btn(type='submit') 짹짹
+        .t

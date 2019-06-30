@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  if user
+    div
+      h2 화면1
+      form#join-form(action='/auth/group-in' method='post')
+        label(for='group-name') 이름
+        input#join-password(type='text' name='name')
+      if joinError
+        .error-message= joinError
+      button#join-btn.btn(type='submit') 추가
+  script.
+    
+

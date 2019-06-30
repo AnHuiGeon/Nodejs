@@ -567,7 +567,7 @@ Schema.prototype.path = function(path, obj) {
     console.log('WARN: ' + warnings[path]);
   }
 
-  if (typeof obj === 'object' && 'ref' in obj) {
+  if (typeof obj === 'object' && utils.hasUserDefinedProperty(obj, 'ref')) {
     validateRef(obj.ref, path);
   }
 
@@ -1186,7 +1186,7 @@ Schema.prototype.queue = function(name, args) {
  *       console.log(this.getQuery());
  *     });
  *
- * @param {String|RegExp} method or regular expression to match method name
+ * @param {String|RegExp} The method name or regular expression to match method name
  * @param {Object} [options]
  * @param {Boolean} [options.document] If `name` is a hook for both document and query middleware, set to `true` to run on document middleware.
  * @param {Boolean} [options.query] If `name` is a hook for both document and query middleware, set to `true` to run on query middleware.
@@ -1236,7 +1236,7 @@ Schema.prototype.pre = function(name) {
  *       console.log('this fires after the post find hook');
  *     });
  *
- * @param {String|RegExp} method or regular expression to match method name
+ * @param {String|RegExp} The method name or regular expression to match method name
  * @param {Object} [options]
  * @param {Boolean} [options.document] If `name` is a hook for both document and query middleware, set to `true` to run on document middleware.
  * @param {Boolean} [options.query] If `name` is a hook for both document and query middleware, set to `true` to run on query middleware.
@@ -1568,10 +1568,10 @@ Schema.prototype.virtual = function(name, options) {
         if (!this.$$populatedVirtuals) {
           this.$$populatedVirtuals = {};
         }
-        if (name in this.$$populatedVirtuals) {
+        if (this.$$populatedVirtuals.hasOwnProperty(name)) {
           return this.$$populatedVirtuals[name];
         }
-        return null;
+        return void 0;
       }).
       set(function(_v) {
         if (!this.$$populatedVirtuals) {

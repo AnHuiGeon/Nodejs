@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 시퀄라이즈 서버
+    style.
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      table th, table td {
+        border: 1px solid black;
+      }
+  body
+    div
+      form#user-form(action="/users" method="post")
+        fieldset
+          legend 사용자 등록
+          div
+            input#username(type="text" name="name" placeholder="이름 : 사용자")
+          div
+            input#age(type="number" name="age" placeholder="나이 : 사용자")
+          button(type="submit") 등록
+    br
+    table#user-list
+      thead
+        tr 사용자 등록 테이블이에양
+          th 아이디
+          th 이름
+          th 나이
+      tbody
+        for user in users
+          tr
+            td
+              form(action="/comments", method="post")
+                input(type="hidden", name="id" value= user.id)
+                input(type="hidden", name="name" value= user.name)
+                input(type="hidden", name="age" value= user.age)
+                input(type="hidden", name="married" value= user.married)
+                input(type="submit", value=user.id)
+            td= user.name
+            td= user.age
+    br
+    div
+      form#comment-form(action="/comments" method="post")
+        fieldset
+          legend 댓글 등록
+          div
+            input#userid(type="text" name="id" placeholder="사용자 아이디 : 댓글")
+          div
+            input#comment(type="text" name="comment" placeholder="댓글 : 댓글")
+          button(type="submit") 등록
+    br
+    table#comment-list
+      thead
+        tr 댓글 등록 테이블이에양
+          th 아이디
+          th 댓글
+      tbody
+        if(comments)
+          for comment in comments
+              tr
+                td= comment.commenter
+                td= comment.comment

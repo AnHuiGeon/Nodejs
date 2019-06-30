@@ -42,7 +42,7 @@ router.patch('/:id', function(req, res, next){ // PATCH /comments/:id
     console.error(err);
     next(err);
   });
-})
+});
 
 router.delete('/:id', function(req, res, next){ // DELETE /comments/:id
   Comment.destroy({where: {id: req.params.id}
@@ -52,6 +52,59 @@ router.delete('/:id', function(req, res, next){ // DELETE /comments/:id
     console.error(err);
     next(err);
   });
-})
+});
+
+// // GET 화살표 함수로 바꾸기
+// router.get('/:id', (req, res, next) => {
+//   Comment.findAll({
+//     include: {
+//       model: User,
+//       where: {id: req.params.id},
+//     },
+//   }).then((comments) => {
+//     console.log(comments);
+//     res.json(comments);
+//   }).catch((err) => {
+//     console.error(err);
+//     next(err);
+//   });
+// });
+
+// // POST 화살표 함수로 바꾸기
+// router.post('/', (req, res, next) {
+//   Comment.create({
+//     commenter: req.body.id,
+//     comment: req.body.comment,
+//   }).then((result) => {
+//     console.log(result);
+//     res.status(201).json(result);
+//   }).catch((err) => {
+//     console.error(err);
+//     next(err);
+//   });
+// });
+
+// // PATCH 화살표 함수로 바꾸기
+// router.patch('/:id', (req, res, next) => {
+//   Comment.update({ comment: req.body.comment },
+//     { where: {id: req.params.id }
+//   }).then((result) => {
+//     res.json(result);
+//   }).catch((err) => {
+//     console.error(err);
+//     next(err);
+//   });
+// });
+
+// // DELETE 화살표 함수로 바꾸기
+// router.delete('/:id', (req, res, next) => {
+//   Comment.destroy({ where: {id: req.params.id }
+//   }).then((result) => {
+//     res.json(result);
+//   }).catch((err) => {
+//     console.error(err);
+//     next(err);
+//   });
+// });
 
 module.exports = router;
